@@ -1,0 +1,128 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+    <title>熱熱屋-計算機</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript>
+        <link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <script>
+        function p_c() {
+            var all_w; 
+            var a6;
+            all_c = document.getElementById("w_cost").value;
+            
+            a6 = document.getElementById("w_other").value;
+            var a1_w = Math.ceil((parseInt(all_c)+parseInt(a6)) /4);
+            var a2_w = Math.ceil((parseInt(all_c)+parseInt(a6)) /4);
+            var a3_w = Math.ceil((parseInt(all_c)+parseInt(a6)) /4);
+            var a4_w = Math.ceil((parseInt(all_c)+parseInt(a6)) /4);
+            
+            var over=parseInt(Math.ceil(a1_w))+parseInt(Math.ceil(a2_w))+parseInt(Math.ceil(a3_w))+parseInt(Math.ceil(a4_w))-(parseInt(all_c)+parseInt(a6))
+            document.getElementById("w_0011cost").innerHTML =parseInt(Math.ceil(a1_w));
+            document.getElementById("w_0012cost").innerHTML =parseInt(Math.ceil(a2_w));
+            document.getElementById("w_002cost").innerHTML =parseInt(Math.ceil(a3_w));
+            document.getElementById("w_003cost").innerHTML =parseInt(Math.ceil(a4_w));
+            document.getElementById("over_cost").innerHTML =parseInt(Math.ceil(over));
+        }
+    </script>
+    <!--  all_c 總電費 ,   a6 為其他費用 , a1_w a2_w a3_w a4_w 為每人平均水費 , -->
+</head>
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper" class="fade-in">
+
+        <!-- Intro -->
+        <div id="intro">
+            <h1>CiJin<br />
+                Hot Hot House.</h1>
+            <ul class="actions">
+                <li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
+            </ul>
+        </div>
+        <!-- Header -->
+        <header id="header">
+            <a href="index.html" class="logo">Calculation.</a>
+        </header>
+        <!-- Nav -->
+        <nav id="nav">
+            <ul class="links">
+                <li><a href="index.html">電費-計算.</a></li>
+                <li class="active"><a href="water.html">水費-計算.</a></li>
+                <li><a href="other.html">額外ㄉ格子.</a></li>
+            </ul>
+        </nav>
+        <!-- Main -->
+        <div id="main">
+            <article class="post featured">
+                <header class="major">
+                    <p><span>
+                            Web page completion</span></p>
+                    <span class="date">February 3, 2020</span>
+                </header>
+                <div>
+                    <div>
+                        <h2>輸入基本資料...</h2>
+                    </div>
+                    <div class="mystyle001">
+                        <div>輸入總水費</div>
+                        <div class="mystyle002"><input type="text" id="w_cost" required placeholder="金額"></div> <!-- 總水費 -->
+                        <div>其他費用 (例如：手續費、遲繳費用...)</div>
+                        <div class="mystyle004"><div >!</div><div class="hov004">若沒有請打上0</div></div>
+                        <div class="mystyle002"><input type="text" id="w_other" placeholder="金額" required></div> <!-- 額外ㄉ費用 -->
+                    </div>
+                </div>
+
+                <div><input type="button" value="計算" onclick="p_c()" style="margin-bottom:10px;"></div>
+               
+                <div>
+                    <div class="mystyle001 mystyle00">
+                        <div>柏樺應繳金額</div>
+                        <div class="mystyle003" id="w_0011cost"></div> <!-- 0011電費 -->
+                        <div>J0應繳金額</div>
+                        <div class="mystyle003" id="w_0012cost"></div> <!-- 0012電費 -->
+                        <div>星澔應繳金額</div>
+                        <div class="mystyle003" id="w_002cost"></div> <!-- 002電費 -->
+                        <div>勁賢應繳金額</div>
+                        <div class="mystyle003" id="w_003cost"></div> <!-- 003電費 -->
+                        <div>剩餘金額</div>
+                        <div class="mystyle003" id="over_cost"></div> <!-- 多於ㄉ水費 -->
+                    </div>
+                </div>
+            </article>
+
+
+
+
+        </div>
+
+
+
+        <!-- Copyright -->
+        <div id="copyright">
+            <ul>
+                <li>J0.</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body></html>

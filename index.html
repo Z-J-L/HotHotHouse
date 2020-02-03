@@ -1,0 +1,148 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+    <title>熱熱屋-計算機</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript>
+        <link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <script>
+        function p_c() {
+            var all_c; var all_n;
+            var a1; 
+            var a2;
+            var a3;
+            var a5;
+            var a6;
+            all_c = document.getElementById("p_cost").value;
+            all_n = document.getElementById("p_num").value;
+            a1 = document.getElementById("p_001num").value;
+            a2 = document.getElementById("p_002num").value;
+            a3 = document.getElementById("p_003num").value;
+            a6 = document.getElementById("p_other").value;
+            a5 = (parseInt(all_n)+parseInt(a6)) - (parseInt(a1) + parseInt(a2) + parseInt(a3));
+            var a1_p = all_c * a1 / all_n;
+            var a2_p = all_c * a2 / all_n;
+            var a3_p = all_c * a3 / all_n;
+            var a5_p = all_c * a5 / all_n;
+            var ta1_p = (a1_p + (a5_p / 2))/2;
+            var ta2_p = a2_p + (a5_p / 4);
+            var ta3_p = a3_p + (a5_p / 4);
+            var over=parseInt(Math.ceil(ta1_p))+parseInt(Math.ceil(ta1_p))+parseInt(Math.ceil(ta2_p))+parseInt(Math.ceil(ta3_p))-(parseInt(all_c)+parseInt(a6))
+            document.getElementById("p_0011cost").innerHTML =parseInt(Math.ceil(ta1_p));
+            document.getElementById("p_0012cost").innerHTML =parseInt(Math.ceil(ta1_p));
+            document.getElementById("p_002cost").innerHTML =parseInt(Math.ceil(ta2_p));
+            document.getElementById("p_003cost").innerHTML =parseInt(Math.ceil(ta3_p));
+            document.getElementById("over_cost").innerHTML =parseInt(Math.ceil(over));
+        }
+    </script>
+    <!--  all_c 總電費 , all_n  總度數 , a1 a2 a3 為各房間度數 , a5 為公用度數 , a6 為其他費用 , a1_p a2_p a3_p 為各房間電費 , a5_p 為公用電費 -->
+</head>
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper" class="fade-in">
+
+        <!-- Intro -->
+        <div id="intro">
+            <h1>CiJin<br />
+                Hot Hot House.</h1>
+            <ul class="actions">
+                <li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
+            </ul>
+        </div>
+        <!-- Header -->
+        <header id="header">
+            <a href="index.html" class="logo">Calculation.</a>
+        </header>
+        <!-- Nav -->
+        <nav id="nav">
+            <ul class="links">
+                <li class="active"><a href="index.html">電費-計算.</a></li>
+                <li><a href="water.html">水費-計算.</a></li>
+                <li><a href="other.html">額外ㄉ格子.</a></li>
+            </ul>
+        </nav>
+        <!-- Main -->
+        <div id="main">
+            <article class="post featured">
+                <header class="major">
+                    <p><span>
+                            Web page completion</span></p>
+                    <span class="date">February 3, 2020</span>
+                </header>
+                <div>
+                    <div>
+                        <h2>輸入基本資料...</h2>
+                    </div>
+                    <div class="mystyle001">
+                        <div>輸入總電費</div>
+                        <div class="mystyle002"><input type="text" id="p_cost" required placeholder="金額"></div> <!-- 總電費 -->
+                        <div>輸入總電數</div>
+                        <div class="mystyle002"><input type="text" id="p_num" required placeholder="金額"></div> <!-- 總度數 -->
+                        <div>其他費用 (例如：手續費、遲繳費用...)</div>
+                        <div class="mystyle004"><div >!</div><div class="hov004">若沒有請打上0</div></div>
+                        <div class="mystyle002"><input type="text" id="p_other" placeholder="金額" required></div> <!-- 額外ㄉ費用 -->
+                    </div>
+                    <div class="mystyle001">
+                        <div>一樓總使用度數</div>
+                        <div class="mystyle002"><input type="text" id="p_001num" required placeholder="金額"></div> <!-- 001度數 -->
+                        <div>二樓右邊使用度數</div>
+                        <div class="mystyle002"><input type="text" id="p_002num" required placeholder="金額"></div> <!-- 右002度數 -->
+                        <div>二樓左邊使用度數</div>
+                        <div class="mystyle002"><input type="text" id="p_003num" required placeholder="金額"></div> <!-- 左003度數 -->
+                    </div>
+                </div>
+
+                <div><input type="button" value="計算" onclick="p_c()" style="margin-bottom:10px;"></div>
+               
+                <div>
+                    <div class="mystyle001 mystyle00">
+                        <div>柏樺應繳金額</div>
+                        <div class="mystyle003" id="p_0011cost"></div> <!-- 0011電費 -->
+                        <div>J0應繳金額</div>
+                        <div class="mystyle003" id="p_0012cost"></div> <!-- 0012電費 -->
+                        <div>星澔應繳金額</div>
+                        <div class="mystyle003" id="p_002cost"></div> <!-- 002電費 -->
+                        <div>勁賢應繳金額</div>
+                        <div class="mystyle003" id="p_003cost"></div> <!-- 003電費 -->
+                        <div>剩餘金額</div>
+                        <div class="mystyle003" id="over_cost"></div> <!-- 多於ㄉ電費 -->
+                    </div>
+                </div>
+            </article>
+
+
+
+
+        </div>
+
+
+
+        <!-- Copyright -->
+        <div id="copyright">
+            <ul>
+                <li>J0.</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body></html>
